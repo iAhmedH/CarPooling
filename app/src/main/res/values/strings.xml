@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Car Pooling</string>
+    <string name="book_ride">Book Your Next Ride</string>
+    <string name="book_ride2">Book</string>
+    <string name="cancel_ride">Cancel</string>
+    <string name="book_ride3">Booking</string>
+    <string name="view_details">View Details</string>
+    <string name="car_type">Car Type: Nissan Sunny</string>
+    <string name="car_model">Car Model: 2019</string>
+    <string name="avaliable_seats">Avaliable Seats: 2</string>
+    <string name="price">Price: 250</string>
+    <string name="ride_details">Ride Details</string>
+
+
+    <!-- Card 1 -->
+    <string name="driver_label">Driver: Ahmed Hossam</string>
+    <string name="customer_label">Customer: Ahmed Hossam</string>
+    <string name="location_label">Location: Abdo Basha - Madient Nasr</string>
+    <string name="time_label">Time: Saturday 12:00 PM</string>
+    <string name="status_label">Pending</string>
+
+    <!-- Card 2 -->
+    <string name="driver_label2">Driver: Mohannad Sabry</string>
+    <string name="location_label2">Location: Tagmo3 - Abdo Basha</string>
+    <string name="time_label2">Time: Tuesday 6:00 PM</string>
+
+    <!-- Card 3 -->
+    <string name="driver_label3">Driver: Ahmed Khaled</string>
+    <string name="location_label3">Location: Masr El Gedida - Abbasya</string>
+    <string name="time_label3">Time: Thursday 5:00 PM</string>
+
+    <!-- Card 4 -->
+    <string name="driver_label4">Driver: Ziad Helmy</string>
+    <string name="location_label4">Location: Abbasya - Abdo Basha</string>
+    <string name="time_label4">Time: Wednesday 2:00 PM</string>
+
+    <string name="signUp_title">Sign Up</string>
+    <string name="login_text">Already have an account? Log In</string>
+    <string name="upcoming_rides">Upcoming Rides</string>
+
+    <string name="routes_title">Routes</string>
+    <string name="route_1">Tagmo3</string>
+    <string name="route_2">Madient Nasr</string>
+    <string name="route_3">Masr El Gedida</string>
+    <string name="route_4">Shorouk</string>
+    <string name="route_5">Mohndseen</string>
+    <string name="route_6">Helwan</string>
+    <string name="route_7">Sheraton</string>
+
+    <string name="button_accept">Accept</string>
+    <string name="button_cancel">Reject</string>
+
+</resources>

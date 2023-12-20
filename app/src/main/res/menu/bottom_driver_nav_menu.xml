@@ -1,0 +1,31 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/Upcoming"
+        android:title=""
+        android:icon="@drawable/ic_launcher_upcoming"/>
+
+
+    <item
+        android:id="@+id/OnGoing"
+        android:title=""
+        android:icon="@drawable/ic_launcher_ride"/>
+
+    <item
+        android:id="@+id/AddRide"
+        android:title=""
+        android:icon="@drawable/ic_launcher_add_ride"/>
+
+    <item
+        android:id="@+id/Previous"
+        android:title=""
+        android:icon="@drawable/ic_launcher_history"/>
+
+
+    <!-- Placeholder for unselected state -->
+    <item
+        android:id="@+id/menu_empty"
+        android:title=""
+        android:icon="@android:color/transparent"
+        android:enabled="false"
+        android:visible="false"/>
+</menu>
