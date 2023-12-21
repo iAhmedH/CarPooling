@@ -1,10 +1,7 @@
 package com.example.carpooling;
 
-
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -15,6 +12,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,17 +21,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 
 public class Routes extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private RoutesAdapter adapter;
     private DatabaseReference routesDatabaseRef;
-
     private ProgressBar progressBar;
 
     @Override
@@ -47,17 +42,18 @@ public class Routes extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.routes_screen);
+
         // Initialize Firebase Database reference
         routesDatabaseRef = FirebaseDatabase.getInstance().getReference("routes");
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.menu_empty);
-
 
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             int itemId = item.getItemId();
 
             if (itemId == R.id.Upcoming) {
-                Intent intent = new Intent(Routes.this,UpcomingRides.class);
+                Intent intent = new Intent(Routes.this, UpcomingRides.class);
                 startActivity(intent);
                 return true;
             } else if (itemId == R.id.Previous) {
@@ -68,8 +64,6 @@ public class Routes extends AppCompatActivity {
                 return false;
             }
         });
-
-
 
         recyclerView = findViewById(R.id.recyclerView);
         progressBar = findViewById(R.id.progressBar);
@@ -107,7 +101,7 @@ public class Routes extends AppCompatActivity {
 
     private void updateRecyclerViewWithRoutes(List<Route> routes) {
         // Update the RecyclerView with the retrieved routes
-        adapter = new RoutesAdapter(routes, Routes.this::onRouteClick);
+        adapter = new RoutesAdapter(routes, this::onRouteClick);
         recyclerView.setAdapter(adapter);
     }
 
@@ -120,11 +114,26 @@ public class Routes extends AppCompatActivity {
         // Start the Rides activity
         startActivity(intent);
     }
+
     private void showProgressBar() {
         progressBar.setVisibility(View.VISIBLE);
     }
 
     private void hideProgressBar() {
         progressBar.setVisibility(View.GONE);
+    }
+
+    // Logout functionality
+    public void logout(View view) {
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(this, SignUp.class);
+        startActivity(intent);
+        finish(); // Close the current activity
+    }
+
+    // Override onBackPressed to prevent navigating back using the device's back button
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
     }
 }

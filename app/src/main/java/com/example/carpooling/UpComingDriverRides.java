@@ -58,19 +58,16 @@ public class UpComingDriverRides extends AppCompatActivity implements UpComingDr
             } else if (itemId == R.id.OnGoing) {
                 Intent intent = new Intent(UpComingDriverRides.this, OnGoingDriverRides.class);
                 startActivity(intent);
-                finish();
                 return true;
             }
             else if (itemId == R.id.AddRide) {
                 Intent intent = new Intent(UpComingDriverRides.this, AddRide.class);
                 startActivity(intent);
-                finish();
                 return true;
             }
             else if (itemId == R.id.Previous) {
                 Intent intent = new Intent(UpComingDriverRides.this, PreviousDriverRides.class);
                 startActivity(intent);
-                finish();
                 return true;
             }
             else {
@@ -178,6 +175,18 @@ public class UpComingDriverRides extends AppCompatActivity implements UpComingDr
 
         // Notify the adapter about the data change if needed
         upcomingDriverRidesAdapter.notifyDataSetChanged();
+    }
+    public void logout(View view) {
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(this, SignUp.class);
+        startActivity(intent);
+        finish(); // Close the current activity
+    }
+
+    // Override onBackPressed to prevent navigating back using the device's back button
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
     }
 
 }

@@ -83,7 +83,7 @@ public class RidesAdapter extends RecyclerView.Adapter<RidesAdapter.ViewHolder> 
             } else {
                 driverName = "Unknown Driver";
                 driverEmail = "Unknown Driver Email";
-                carType = "Unknown Car type";
+                carType = "Unknown Car Type";
                 carModel = "Unknown Car Model";
             }
             textName.setText("Driver's Name: " + driverName);
