@@ -32,13 +32,7 @@ public class PreviousRides extends AppCompatActivity {
     private ProgressBar progressBar;
     private String userEmail;
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        // Set no item as selected when the activity is resumed
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.menu_empty);
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +42,7 @@ public class PreviousRides extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerViewUpcomingRides);
         progressBar = findViewById(R.id.progressBarUpcomingRides);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.menu_empty);
+        bottomNavigationView.setSelectedItemId(R.id.Previous);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             int itemId = item.getItemId();

@@ -86,7 +86,7 @@ public class RidesAdapter extends RecyclerView.Adapter<RidesAdapter.ViewHolder> 
                 carType = "Unknown Car Type";
                 carModel = "Unknown Car Model";
             }
-            textName.setText("Driver's Name: " + driverName);
+            textName.setText("Driver: " + driverName);
 
             textTime.setText("Time: " + ride.getTime());
 

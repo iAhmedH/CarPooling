@@ -60,7 +60,7 @@ public class RideDetails extends AppCompatActivity {
         TextView priceTextView = findViewById(R.id.textPrice);
         TextView seatsTextView = findViewById(R.id.textSeats);
 
-        driverNameTextView.setText("Driver's Name: " + driverName);
+        driverNameTextView.setText("Driver: " + driverName);
         locationTextView.setText("Location: " + location);
         timeTextView.setText("Time: " + time);
         carTypeTextView.setText("Car Type: " + carType);

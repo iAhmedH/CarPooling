@@ -33,20 +33,14 @@ public class AddRide extends AppCompatActivity {
     private Spinner spinnerTime;
     private Button btnAddRide;
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        // Set no item as selected when the activity is resumed
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomDriverNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.menu_empty);
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_ride);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomDriverNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.menu_empty);
+        bottomNavigationView.setSelectedItemId(R.id.AddRide);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             int itemId = item.getItemId();

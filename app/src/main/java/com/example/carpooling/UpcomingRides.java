@@ -34,14 +34,7 @@ public class UpcomingRides extends AppCompatActivity implements UpComingRidesAda
     private ProgressBar progressBar;
     private String userEmail;
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        // Set no item as selected when the activity is resumed
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.menu_empty);
-    }
-
+//
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +43,7 @@ public class UpcomingRides extends AppCompatActivity implements UpComingRidesAda
         recyclerView = findViewById(R.id.recyclerViewUpcomingRides);
         progressBar = findViewById(R.id.progressBarUpcomingRides);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.menu_empty);
+        bottomNavigationView.setSelectedItemId(R.id.Upcoming);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             int itemId = item.getItemId();
